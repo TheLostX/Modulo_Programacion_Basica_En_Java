@@ -1,0 +1,26 @@
+Algoritmo Sandwich
+
+Entrada---
+
+pan molde
+lechuga
+tomate
+queso laminado
+plato
+cuchillo
+
+
+Proceso---
+
+1.- Colocar una rebanada de pan sobre el plato
+2.- Cortar 2 rebanadas de tomate con el cuchillo.
+3.- Colocar las rebanadas de tomate sobre el pan del plato.
+4.- Cortar una hoja de lechuga con el cuchillo.
+5.- Colocar la hoja de lechuga sobre el tomate que está en el pan.
+6.- Colocar una lamina de queso sobre la lechuga que está en el pan.
+7.- Poner una rebanada de pan sobre el queso para finalizar el sandwich.
+
+
+salida---
+
+Un Sandwich

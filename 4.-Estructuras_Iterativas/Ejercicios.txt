@@ -1,0 +1,15 @@
+inicio
+
+int num=0
+
+Escribe ("Ingrese un numero para determinar si el numero es par o no")
+
+Leer num
+
+si (num % 2 == 0)
+
+Escribe ("Su numero ingresado es par")
+
+sino Escribe ("Su numero ingresado es impar")
+
+fin

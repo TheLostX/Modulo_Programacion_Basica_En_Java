@@ -1,0 +1,26 @@
+Algoritmo cambio de clave (GMAIL)
+
+entrada---
+
+computador
+internet
+mouse
+
+proceso---
+
+1.- Encender el computador
+2.- Conectarlo a internet
+3.- abrir un navegador de internet
+4.- Una vez dentro del navegador ingresar a www.gmail.com
+5.- Ingresar su correo y dar click en el boton siguiente
+6.- Luego ingresar contraseña y hacer click en el boton siguiente
+7.- Hacer click en el menu configuracion
+8.- Una vez en las configuraciones presionar en la pestaña "Cuentas e importacion"
+9.- Presionar en cambiar contraseña
+10.- Ingresar nuevamente usuario y contraseña
+11.- Se abrirá una nueva pestaña en donde debe colocar la nueva contraseña y confirmarla
+12.- hacer click en el boton "Cambiar la contraseña".
+
+salida---
+
+Nueva contraseña

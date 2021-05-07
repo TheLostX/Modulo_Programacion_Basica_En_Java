@@ -1,0 +1,11 @@
+Logica Proposicional:
+
+es un sistema formal cuyos elementos más simples representan proposiciones o enunciados, 
+y cuyas constantes lógicas, llamadas conectivas lógicas, representan operaciones sobre proposiciones, 
+capaces de formar otras proposiciones de mayor complejidad.
+
+una conectiva lógica, o también conectiva, (también llamado operador lógico o conectores lógicos) es un símbolo
+o palabra que se utiliza para conectar dos fórmulas bien formadas o sentencias, de modo 
+que el valor de verdad de la fórmula compuesta depende del valor de verdad de las fórmulas componentes. 
+
+-------------------------------//--------------------------------------------------------------------------

@@ -1,0 +1,25 @@
+Algoritmo compra tienda virtual
+
+entrada---
+
+computador
+mouse
+internet
+
+
+proceso---
+
+1.- Encender el computador
+2.- Conectarlo a internet
+3.- Abrir un navegador
+4.- ingresar a la dirección de la tienda virtual
+5.- ingresar en el buscador el producto a comprar
+6.- ingresar la cantidad de productos a comprar
+7.- escribir la direccion de despacho
+8.- elegir medio de pago
+9.- pagar
+10.- esperar a que se haga la transacción correctamente
+
+salida---
+
+Compra realizada
