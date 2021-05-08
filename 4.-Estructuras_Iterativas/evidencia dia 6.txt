@@ -1,0 +1,357 @@
+ejercicio 5
+
+inicio
+
+numero1 float
+numero2 float
+
+escribir “Ingrese numero1”
+leer numero 1
+
+escribir “Ingrese numero2”
+leer numero 2
+
+Si (numero1==numero2) entonces
+escribir ("Los numeros son iguales")
+
+Sino
+		si (numero1 < numero2) entonces
+
+				escribir ("El numero menor ingresado es" numero 1)
+
+		sino
+
+				escribir ("el numero menor es “, numero 2)
+fin
+
+_____
+
+ejercicio 4 numero mayor
+
+inicio
+
+numero1 integer
+numero2 integer
+
+escribir “Ingrese numero1”
+leer numero 1
+
+escribir “Ingrese numero2”
+leer numero 2
+
+Si (numero1==numero2) entonces
+escribir ("Los numeros son iguales")
+
+Sino
+		si (numero1 <numero2) entonces
+
+				escribir ("El numero mayor ingresado es" numero2)
+
+		sino
+				escribir ("el numero mayor es “, numero1)
+fin
+
+____
+Ejercicio 3
+
+// Determinar si numero es multiplo o no de 3  
+Entrada: Numero a Comprobar
+Salida: Comprobación si es múltiplo de 3 
+Variables: 
+float NumeroPrueba  
+
+Inicio  
+
+Imprimir "ingrese numero a comprobar" 
+Leer NumeroPrueba 
+
+Si (NumeroPrueba%3==0)
+         imprimir "el numero es múltiplo de 3" 
+         
+Sino         
+		 Imprimir ("el numero no es multiplo de 3")  
+Fin 
+____
+Ejercicio 2
+
+// Determinar si numero es multiplo o no de 2  
+Entrada: Numero a Comprobar
+Salida: Comprobación si es múltiplo de 2 
+Variables: 
+float NumeroPrueba  
+
+Inicio  
+
+Imprimir "ingrese numero a comprobar" 
+
+Leer NumeroPrueba 
+
+Si NumeroPrueba %2 ==0
+         imprimir "el numero es múltiplo de 2" 
+Sino         
+		Si (
+		                Imprimir "el numero no es multiplo de 2"  
+Fin 
+___
+Ejercicio 1
+
+algoritmo que permite resolver si un numero es par o impar
+
+inicio
+
+int num=0
+
+Escribe ("Ingrese un numero para determinar si el numero es par o no")
+
+Leer num
+
+si (num % 2 == 0)
+
+Escribe ("Su numero ingresado es par")
+
+sino Escribe ("Su numero ingresado es impar")
+
+fin
+
+ejercicio 1 algoritmo que permite resolver si un numero es par o impar
+
+inicio
+
+int num=0
+
+Escribe ("Ingrese un numero para determinar si el numero es par o no")
+
+Leer num
+
+si (num % 2 == 0)
+
+Escribe ("Su numero ingresado es par")
+
+sino Escribe ("Su numero ingresado es impar")
+
+fin
+
+----------------------------------------//-----------------------------------------------------------
+
+Ejercicio 3
+ingresa 4 notas y calcule el promedio
+
+inicio
+
+float nota1
+float nota2
+float nota3
+float nota4
+float suma
+float promedio
+
+escribir "ingrese la primera nota"
+leer nota1
+
+escribir "ingrese la segunda nota"
+leer nota2
+
+escribir "ingrese la tercera nota"
+leer nota3
+
+escribir "ingrese la cuarta nota"
+leer nota4
+
+suma = nota1 + nota2 + nota3 + nota4
+promedio = suma/4
+
+si (promedio>= 4.0f)
+        escribir "Usted ha aprobado con nota" + promedio
+
+sino
+        escribir "Usted ha reprobado con nota" + promedio
+finSi
+
+finAlgoritmo
+
+
+
+--------------------------------------------------------------
+
+ejercicio 2
+___AB___
+
+ALGORITMO x2 y x5
+
+Int A
+
+Escribir: “ingrese su número”
+Leer A
+Si (A Mod2 == 0)
+        Escribir: “Tu número es divisible por dos” 
+               Si (A Mod5 == 0)
+        Escribir: “Además tu número es divisible por cinco… ¡felicidades!”
+        Sino
+        Escribir: “Pero no es divisible por 5… lo siento bro”
+Sino 
+Escribir: “Tu número no es divisible por 2… así que dejémoslo hasta acá nomás”
+
+  Fin Si
+ Fin Si
+FIN
+
+----------------------------------------//---------------------------------------------
+
+Inicio 
+
+ Int numero 1
+ Int numero 2 
+ Int numero 3 
+
+Escribir “ingrese número 1”
+Leer numero 1
+
+Escribir “ingrese número 2”
+Leer numero 2
+
+Escribir “ ingrese número 3”
+Leer numero 3
+
+Si num1> num2 y num1>3
+Escribir “El numero mayor es num1”
+
+Si num 2>num1 y num2>3
+Escribir “El numero mayor es num2”
+
+Si num 3>num1 y num3>2
+Escribir “El numero mayor es num3”
+Fin si
+
+Fin Algoritmo
+------------------------------------------------------------------------------------
+
+5.- Usuario ingresará dos números y elegirá que operación realizará
+
+Variables
+float numero1
+Float numero2
+Float Resultado
+String Operaciòn
+Algoritmo
+Escribir “ingrese un numero”
+Leer numero1
+Escribir “ingrese un numero”
+Leer numero2
+Escribir Operaciòn a realizar
+Leer Operaciòn
+Segùn <Operacion>
+Operacion= + escribir numero1+numero2
+Operacion= - escribir numero1-numero2
+Operacion= * escribir numero1*numero2
+Operacion= / Escribir 
+Si numero2==0 entonces “resultado no existe”
+sino escribir numero1/numero2
+Fin segun
+
+----------------------------------//-------------------------------------
+
+   Mostrar del 1 al 100
+
+   para (num =1; num <=100; num++) hacer
+	escribir num
+   finPara
+---------------------------------------------
+   Mostrar del 100 al 1
+
+   para(num = 100; num>=1; num--) hacer
+	escribir num
+   finPara
+
+----------------------------------//----------------------------------------
+
+int cantidad
+int num
+int suma = 0
+
+escribir ingresa la cantidad de numeros a sumar
+leer cantidad
+
+para(i=0; i< cantidad; i++) hacer
+
+   escribir "ingrese un numero"
+   leer num
+   si (num %2==0)
+	suma = suma + num
+   finSi
+finPara
+
+escribir "La suma de sus numeros es" + suma
+
+--------------------------------------//-------------------------------------------
+
+07/05/2021
+
+--------------------------------------------------
+
+sumar numeros del 1 al 100
+
+int suma = 0
+
+para(i=1; i<=100;i++)hacer
+
+    suma = suma + i;
+finPara
+
+escribir "La suma de los numeros es: ", suma;
+
+------------------------------------------------------
+
+sumar numeros multiplos de 9 del 1 al 100
+
+    int suma = 0;
+        
+        para(int i = 1; i <=100; i++)hacer
+            
+	    si(i%9==0)
+                suma = suma + i;
+	    finSi
+	finPara
+        
+        escribir("la suma es: " ,  suma);
+-------------------------------------------------------
+
+calcular la suma de N numeros ingresados por usuario
+
+int cantidad
+int suma
+
+escribir ingrese la cantidad de numeros a sumar
+
+leer cantidad
+
+para(i=1; i<= cantidad; i++) hacer
+    suma = suma+i
+finPara
+
+escribir la suma de los numeros es, suma
+--------------------------------------------------
+
+int i = 1
+int suma = 0
+
+escribir ingrese la cantidad de numeros a sumar
+
+leer cantidad
+
+mientras(i <= cantidad) hacer
+
+   suma = suma + i
+   i++
+finMientras
+
+escribir la suma de los numeros es, suma
+
+-------------------------------------------------
+
+
+
+
+	
+
+   
+

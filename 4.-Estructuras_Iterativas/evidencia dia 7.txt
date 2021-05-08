@@ -1,0 +1,225 @@
+//Calcular N numeros (cantidad ingresada por usuario) que sean numeros primos.
+
+Variables:
+- Int cantidad
+- Int numero = 0
+- Int Numaux
+- Int calculo
+- Int i
+- int aux
+
+Proceso:
+Escribir ("Cuantos numeros desea calcular?")
+Leer cantidad
+
+Para (i = 1; i <= cantidad; i++){
+Escribir ("Ingrese " . i . "Numero")
+Leer (numero)
+numaux = 2
+Si (numero > 1) {
+Mientras (Numaux < numero){
+calculo = numero % numaux
+Si (calculo == 0){
+Numaux = numero
+aux = 1
+}
+Fin Si
+Si (aux == 1 && numero > 2){
+Escribir ("El numero " . numero . "no es primo!")
+}
+Sino {
+Escribir ("El numero " . numero . "es primo")
+}
+Fin Si
+aux = 0
+Numaux++
+}Fin Mientras
+}
+Sino {
+Escribir ("El numero 1 no es primo, favor ingresar otro numero")
+}
+}Fin Para
+
+------------------------------------//--------------------------------
+
+// Sumar solo numeros pares ingresados por usuario
+
+int cantidad
+int num
+int suma
+
+escribir "Ingrese la cantidad de numeros a sumar"
+leer cantidad
+
+para (i = 1; i <= cantidad; i++) hacer
+    escribir "Ingrese un numero"
+    leer num
+    si (num % 2 != 0) 
+        escribir "Su numero no es par"
+    sino
+        suma = suma + num
+    finSi
+finPara
+
+escribir "La suma de sus numeros es", suma
+
+-------------------------------//--------------------------------------
+
+//Contar numeros multiplos de 5
+
+int cantidad
+int contador
+int num
+int suma
+
+escribir "Ingrese la cantidad de numeros a sumar"
+leer cantidad
+
+para(i=0; i<cantidad;i++)hacer
+    escribir "Ingresa el numero a sumar"
+    leer num
+
+    si(num % 5==0)
+        contador++
+    finSi
+finPara
+
+escribir "La cantidad de multiplos de 5 fueron", contador
+
+--------------------------//------------------------------------------
+
+//Sumar numeros pares e impares y contarlos
+
+int cantidad
+int contadorNP
+int contadorNI
+int num
+int sumaNP
+int sumaNI
+
+escribir "Ingrese la cantidad de numeros a sumar"
+leer cantidad
+
+
+para (i=0; i< cantidad; i++)hacer
+    escribir "Ingrese un numero a sumar"
+    leer num
+    si(num%2==0)
+        sumaNP = sumaNP + num
+        contadorNP++
+    sino
+        sumaNI = sumaNI + num
+        contadorNI++
+    finSi
+finPara
+
+escribir "La suma de los numeros pares es", sumaNP, "Y la cantidad es ", contadorNP;
+escribir "La suma de los numeros impares es", sumaNI, "Y la cantidad es ", contadorNI;
+
+---------------------------//----------------------------------------------------------------------
+
+
+int cantidad
+int contadorNP
+int contadorNI
+int num
+int sumaNP
+int multNI = 1
+
+escribir "Ingrese la cantidad de numeros totales"
+leer cantidad
+
+para (i=0; i< cantidad; i++)hacer
+    escribir "Ingrese un numero"
+    leer num
+    si(num%2==0)
+        sumaNP = sumaNP + num
+        contadorNP++
+    sino
+        multNI = multNI * num
+        contadorNI++
+    finSi
+finPara
+
+escribir "La suma de los numeros pares es", sumaNP, "Y la cantidad es ", contadorNP;
+escribir "La suma de los numeros impares es", multNI, "Y la cantidad es ", contadorNI;
+
+    si(contadorNP==contadorNI)
+        "escribir "la cantidad de numeros es igual"
+    sino si(contadorNP>contadorNI)
+        escribir "La caintidad de numeros pares es mayor"
+    sino
+        escribir "La cantidad de numeros impares es mayor"
+
+-----------------------------------//----------------------------------------------------------
+
+// calcular el promedio de N notas ingresadas y ver si reprueba o aprueba
+
+int respuesta = 1
+float nota = 0
+int contador = 0
+float suma = 0.0f
+float promedio = 0.0f
+
+mientras(respuesta==1)hacer
+    escribir "ingrese una nota"
+    leer nota
+    suma = suma + nota
+    contador++
+    escribir desea agregar otra nota? si(1) no(2)
+    leer respuesta
+finMientras
+
+    promedio = suma/contador
+
+si (promedio >=4.0f)
+    escribir "usted aprobó con nota", promedio
+sino
+    escribir "usted reprobó con nota", promedio
+
+-------------------------------------------//--------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
