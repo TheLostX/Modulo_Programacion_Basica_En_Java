@@ -1,0 +1,54 @@
+
+int cantidadLapices
+int costo
+
+escribir "Ingrese la cantidad de lapices"
+
+leer cantidadLapices
+
+si(cantidadLapices>=1000)
+    costo = cantidadLapices * 85
+sino
+    costo = cantidadLapices * 90
+finSi
+
+escribir "El precio es de " + costo
+
+
+--------------------//----------------------------
+
+int precio
+float precioDesc
+float precioFinal
+
+escribir "Ingrese el precio del producto
+leer precio
+
+si (precio >250000)
+    precioDesc = precio * 0.15f
+    precioFinal = precioFinal - precioDesc
+sino
+    precioDesc = precio * 0.08
+    precioFinal = precioFinal - precioDesc
+finSi
+
+escribir "El precio final es " + precioFinal + "y
+el descuento fue de " + precioDesc
+
+---------------------//------------------------------------
+
+presupuesto
+
+int numPersonas
+
+    si (numPersonas <=200)
+        costo = numPersonas * 9500;
+    sino si (numPersonas >200 y numPersonas < 300)
+	costo = numPersonas * 8500;
+    sino
+	costo = numPersonas * 7500
+    finSi
+
+escribir "El costo toal es " +  costo
+	
+
