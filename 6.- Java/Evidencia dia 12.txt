@@ -1,0 +1,142 @@
+
+package holamundo;
+
+import java.util.Scanner;
+
+
+public class HolaMundo {
+
+    public static void main(String[] args) {
+        
+        HolaMundo hm = new HolaMundo();
+        
+        //hm.variables();
+        //hm.operaciones();
+        //hm.promedio();
+        //hm.claseScanner();
+        //hm.promedioScanner();
+        //hm.intercambioVariables();
+
+        
+       
+    }
+    
+    public void variables(){
+        
+
+        //tipo de dato - nombre Variable
+        
+        byte numero1 = 127;
+        short numero2 = 23424;
+        int numero3 =23443;
+        long numero4 = 23424345;
+        float numero5 = 4.8f;
+        double numero6 = 2.34;
+        
+        System.out.println("El valor de la variable 1 es " + numero1 + " y el valor"
+                + "de la variable 2 es " + numero2);
+        System.out.println(numero3);
+        System.out.println(numero4);
+        System.out.println(numero5);
+        System.out.println(numero6);
+    }
+    
+    public void operaciones(){
+              
+        //Operaciones
+        int numeroX = 320;
+        int numeroY = 640;
+        int suma = numeroX + numeroY;
+        int resta = numeroX - numeroY;
+        int mult = numeroX * numeroY;
+        float div = (float)numeroX / (float)numeroY;
+        System.out.println("La suma es: " + suma);
+        System.out.println("la resta es: " + resta);
+        System.out.println("La multiplicacion es: " + mult);
+        System.out.println("La division es: " + div);
+        
+    }
+    
+    public void promedio(){
+        
+        int nota1 = 50;
+        int nota2 = 70;
+        int nota3 = 55;
+        int nota4 = 70;
+        
+        float suma = nota1 + nota2 + nota3 + nota4;
+        float promedio = suma /4;
+        
+        System.out.println("El promedio es: " + promedio);
+    }
+    
+    public void claseScanner(){
+        
+            
+        Scanner scanner = new Scanner(System.in);
+        
+        int numero; 
+        float numero2;
+        char x = 'x';
+        
+        System.out.println("Ingrese un valor");
+        
+        numero = scanner.nextInt();
+        
+        System.out.println("El valor de la variable es " + numero);
+        
+        System.out.println("ingresa el siguiente valor");
+        
+        numero2 = scanner.nextFloat();
+        
+        
+        System.out.println("el valor de la variable es " + numero2);
+        
+        
+    }
+    
+    public void promedioScanner(){
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Ingrese primer valor");
+        int num1 = scanner.nextInt();
+        
+        System.out.println("Ingrese segundo valor");
+        int num2 = scanner.nextInt();
+        
+        System.out.println("Ingrese tercer valor");
+        int num3 = scanner.nextInt();
+        
+        System.out.println("Ingrese cuarto valor");
+        int num4 = scanner.nextInt();
+        
+        
+        float suma = num1 + num2 + num3 + num4;
+        float promedio = suma/4;
+        
+        System.out.println("El promedio es " + promedio);
+    }
+    
+    public void intercambioVariables(){
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Ingresa el primer valor");
+        int num1 = scanner.nextInt();
+        
+        System.out.println("Ingresa el segundo valor");
+        int num2 = scanner.nextInt();
+        
+        int aux = num2;
+        num2 = num1;
+        num1 = aux;
+        
+        System.out.println(" Ahora tu primera variable vale: " + num1);
+        System.out.println("Tu segunda variable vale: " + num2);
+        
+        
+        
+    }
+    
+}
