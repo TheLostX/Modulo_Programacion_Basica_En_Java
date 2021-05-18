@@ -1,0 +1,100 @@
+
+package com.charles;
+
+import java.util.Scanner;
+
+
+public class MainClass {
+    
+    public static void main(String[] args){
+        
+        MainClass mainClass = new MainClass();
+        
+        //mainClass.programa1();
+        //mainClass.programa2();
+       // mainClass.programa3();
+    }
+    
+    
+    
+    public void programa1(){
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        
+        System.out.println("Ingrese un valor");
+        int num1 = scanner.nextInt();
+        
+        System.out.println("Ingrese el segundo valor");
+        int num2 = scanner.nextInt();
+        scanner.nextLine();
+        
+        System.out.println("Ingrese la operacion (suma, resta, mult, div)");
+        String operacion = scanner.nextLine();
+        
+        if(operacion.equals("suma")){
+            int suma = num1 + num2;
+            System.out.println("La suma es: " + suma);
+        }
+        else if (operacion.equals("resta")){
+            
+            int resta = num1 - num2;
+            System.out.println("La resta es: " + resta);
+        }
+        else if (operacion.equals("mult")){
+            int mult = num1 * num2;
+            System.out.println("La multiplicacion es : " + mult);
+        }
+        else{
+            float div = (float)num1 / (float)num2;
+            System.out.println("La division es:" + div);
+        }
+        
+        
+       
+            
+        
+    }
+    
+    public void programa2(){
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Escribe cualquier numero del 1 al 10");
+        
+        int numero = scanner.nextInt();
+  
+        if (numero >0 && numero <=10){
+            
+            int miNumero = numero + 1;
+            System.out.println("Mi numero es " + miNumero + ", yo gané :P");
+        }
+        else{
+            System.out.println("Tu numero no esta en el rango indicado :v");
+        }
+        
+    }
+    
+    public void programa3(){
+        
+        //Costo de lapices
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        int cantidadLapices;
+        int costo;
+        
+        System.out.println("Ingrese la cantidad de lapices");
+        cantidadLapices = scanner.nextInt();
+        
+        if(cantidadLapices>=1000){
+            costo = cantidadLapices * 85;
+        }
+        else{
+            costo = cantidadLapices * 90;
+        }
+        
+        System.out.println("El costo de los lapices es: $" + costo);
+        
+    }
+}
