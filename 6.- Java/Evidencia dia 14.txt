@@ -1,0 +1,217 @@
+
+package com.charles;
+
+import java.util.Random;
+import java.util.Scanner;
+
+
+public class MainClass {
+    
+    public static void main(String[] args) {
+        
+        MainClass mainClass = new MainClass();
+        //mainClass.mayorDeTresNumeros();
+        //mainClass.chismefon();
+        //mainClass.switch1();
+        //mainClass.switch2();
+        
+    }
+    
+    
+    public void mayorDeTresNumeros(){
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Ingresar un numero");
+        int num1 = scanner.nextInt();
+        
+        System.out.println("Ingresa otro numero");
+        int num2 = scanner.nextInt();
+        
+        System.out.println("Ingresa el ultimo numero");
+        int num3 = scanner.nextInt();
+        
+        
+        if(num1> num2 && num1 > num3){
+            
+            System.out.println("El mayor es el numero uno: " + num1);
+            
+            if(num2>num3){
+                System.out.println("Luego el dos: " + num2);
+                System.out.println("Y finalmente el tres: " + num3);
+            }
+            else{
+                System.out.println("Luego el tres: " + num3);
+                System.out.println("Y finalmente el dos: " + num2);
+            }
+        }
+        else if (num2>num1 && num2> num3){
+            System.out.println("El mayor es el numero dos: " + num2);
+            
+            if(num1>num3){
+                System.out.println("Luego el uno: " + num1);
+                System.out.println("Y finalmente el tres: " + num3);
+            }
+            else{
+                System.out.println("Luego el tres: " + num3);
+                System.out.println("Y finalmente el uno: " + num1);
+            }
+        }
+        else{
+            System.out.println("El mayor es el numero tres: " + num3);
+            
+            if(num1>num2){
+                System.out.println("Luego el uno: " + num1);
+                System.out.println("Y finalmente el dos: " + num2);
+            }
+            else{
+                System.out.println("Luego el dos: " + num2);
+                System.out.println("Y finalmente el uno: " + num1);
+            }
+        }
+        
+    }
+    
+    public void chismefon(){
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Ingrese el tiempo de llamado");
+        int tiempoLlamada = scanner.nextInt();
+        float total;
+        
+        
+        if(tiempoLlamada<=5){
+            total = tiempoLlamada * 100;
+        }
+        else if (tiempoLlamada>5 && tiempoLlamada<=8){
+            total = (100 * 5) + (tiempoLlamada-5) * 80;
+        }
+        else if (tiempoLlamada>8 && tiempoLlamada<=10){
+            total = (5 * 100) + (3 * 80) + (tiempoLlamada - 8) * 70;
+        }
+        else{
+            total = (5 * 100)+ (3 * 80) + (2 * 70) + (tiempoLlamada - 10) * 50;
+        }
+        
+        System.out.println("ingrese: dia Habil(1), dia domingo(2)");
+        byte dia = scanner.nextByte();
+        
+        if(dia==1){
+            System.out.println("ingrese: jornada Vespertina(1), matutina(2)");
+            byte jornada = scanner.nextByte();
+            
+            if(jornada==1){
+                float impuesto = total * 0.1f;
+                total += impuesto;
+            }
+            else{
+                float impuesto = total * 0.15f;
+                total += impuesto;
+            }
+        }
+        else{
+            float impuesto = total * 0.03f;
+            total += impuesto;
+        }
+        
+        
+        System.out.println("El total de la llamada es: " + total);
+    }
+    
+    public void switch1(){
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Ingresa un valor");
+        float num1 = scanner.nextFloat();
+        
+        System.out.println("Ingresa un segundo valor");
+        float num2 = scanner.nextFloat();
+        
+        float resultado = 0;
+        
+        System.out.println("Ingresa una operacion  \n 1.-Suma \n 2.-Resta \n 3.-Multiplicacion \n 4.- Division");
+        
+        int operacion = scanner.nextInt();
+        
+        
+        switch (operacion){
+            
+            case 1:
+                resultado = num1 + num2;
+                break;
+            
+            case 2:
+                resultado = num1 - num2;
+                break;
+                
+            case 3:
+                resultado = num1 * num2;
+                break;
+                
+            case 4:
+                resultado = num1 / num2;
+                break;
+                
+            default:
+                System.out.println("Opcion no valida");
+                break;
+                
+        }
+        
+        System.out.println("El resultado es: " + resultado);
+    }
+    
+    public void switch2(){
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Ingresa un numero para un dia a ver si le achuntas a que dia es hoy :P");
+        System.out.println(" 1.- Lunes \n 2.- Martes \n 3.- Miercoles \n 4.- Jueves \n 5.- Viernes \n 6.- Sabado \n 7.- Domingo");
+        
+        int opcion = scanner.nextInt();
+        
+        opcion-=1;
+        
+       
+        Random random = new Random();
+        
+        
+        int numero = random.nextInt(7);
+        
+        switch(numero){
+            
+            case 0:
+                System.out.println("Es Lunes");
+                break;
+            case 1:
+                System.out.println("Martes :P");
+                break;
+            case 2:
+                System.out.println("es Miercoles");
+                break;
+            case 3:
+                System.out.println("Es Jueves");
+                break;
+            case 4:
+                System.out.println("Es viernes");
+                break;
+            case 5:
+                System.out.println("Es Sabado");
+                break;
+            case 6:
+                System.out.println("Domingoooo");
+                break;
+        }
+    
+        if(opcion==numero){
+            System.out.println("Acertaste!!!!!!!!!!");
+        }
+        else{
+            System.out.println("No acertaste :(");
+        }
+        
+        
+    }
+    
