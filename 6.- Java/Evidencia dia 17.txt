@@ -1,0 +1,203 @@
+
+package com.charles;
+
+import java.util.Scanner;
+
+
+public class MainClass {
+    
+    public static void main(String[] args) {
+        
+        MainClass mainClass = new MainClass();
+        
+        //mainClass.numeroSuerte();
+       // mainClass.numeroSuerte2();
+        //mainClass.horaMinutoSegundo();
+        mainClass.calculadora();
+        
+    }
+    
+    public void numeroSuerte(){
+        
+        int sumaFinal = 0;
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Ingrese dia");
+        int dia = scanner.nextInt();
+        
+        System.out.println("Ingrese mes");
+        int mes = scanner.nextInt();
+        
+        System.out.println("Ingrese año");
+        int anno = scanner.nextInt();
+        
+        int suma = dia + mes + anno;
+        System.out.println(suma);
+        
+        String sumaString = String.valueOf(suma);
+        System.out.println("La suma de tu dia mes y año es: " + sumaString);
+        
+        Character arreglo[] = new Character[sumaString.length()];
+        int arregloInt[] = new int[sumaString.length()];
+        
+        
+        for(int i = 0; i < sumaString.length();i++ ){
+            
+            arreglo[i] = sumaString.charAt(i);
+            arregloInt[i] = Integer.parseInt(arreglo[i].toString());
+        }
+        
+        for(int i = 0; i < arregloInt.length;i++){
+            sumaFinal += arregloInt[i];
+        }
+        
+        System.out.println("Tu numero de la suerte es: " + sumaFinal);
+    }
+    
+    public void numeroSuerte2(){
+        
+        int sumaFinal = 0;
+
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Ingrese dia");
+        int dia = scanner.nextInt();
+        
+        System.out.println("Ingrese mes");
+        int mes = scanner.nextInt();
+        
+        System.out.println("Ingrese año");
+        int anno = scanner.nextInt();
+        
+        int suma = dia + mes + anno;
+        
+        for(int i = 0; i <4; i++){
+            
+            int mod = suma%10;
+            suma = suma/10;
+            
+            sumaFinal +=mod;
+        }
+        
+        System.out.println("Tu numero es: " + sumaFinal);
+
+    }
+    
+    public void horaMinutoSegundo(){
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        boolean horaInvalida = true;
+        
+        int hora = 0, minuto = 0, segundo = 0;
+        
+       while(horaInvalida){
+           
+            System.out.println("Ingrese una hora");
+            hora = scanner.nextInt();
+        
+            System.out.println("Ingresa un minuto");
+            minuto = scanner.nextInt();
+        
+            System.out.println("Ingresa un segundo");
+            segundo = scanner.nextInt();
+        
+            if(hora>24 || hora<0 ){
+                System.out.println("Hora incorrecta, ingresar hora valida");
+                horaInvalida = true;
+            }
+        
+            if(minuto <0 || minuto >59){
+                System.out.println("Minuto incorrecto, ingresar minuto valido");
+                horaInvalida = true;
+            }
+        
+            if(segundo <0 || segundo >59){
+                System.out.println("Segundo incorrecto, ingresar segundo valido");
+                horaInvalida = true;
+            }
+            
+            if(hora<=24 && hora >=0 && minuto<60 && minuto >=0 && segundo<60 && segundo>=0){
+                horaInvalida = false;
+            }
+ 
+        }
+       
+       System.out.println("Son las: " + hora + ":" + minuto + ":" + segundo);
+    }
+    
+    public void calculadora(){
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        boolean calcular = true;
+        
+        while(calcular){
+            
+            System.out.println("Ingrese el primer numero");
+            float num1 = scanner.nextFloat();
+            
+            System.out.println("Ingrese el segundo valor");
+            float num2 = scanner.nextFloat();
+            
+            float resultado = 0;
+            
+            System.out.println("Ingrese una operacion a realizar \n 1.-Suma \n 2.-Resta \n 3.-Multiplicacion \n 4.-Division");
+            int operacion = scanner.nextInt();
+            
+        
+            switch (operacion){
+                
+                case 1:
+                    resultado = num1 + num2;
+                    break;
+                    
+                case 2:
+                    resultado = num1 - num2;
+                    break;
+                    
+                case 3:
+                    resultado = num1 * num2;
+                    break;
+                    
+                case 4:
+                    if(num2 == 0){
+                        System.out.println("No se puede dividir por 0");
+                        break;
+                    }
+                    resultado = num1 / num2;
+                    break;
+                    
+                default:
+                    System.out.println("Operacion invalida, intenta denuevo");
+                    break;
+            }
+            
+            System.out.println("La operacion dio como resultado : " + resultado);
+            
+            int opcion = 2;
+            
+            while(opcion ==2){
+                System.out.println("Desea realizar otra operacion? (1)Si, (2)No");
+                
+            
+                opcion = scanner.nextInt();
+            
+                if (opcion==1){
+                    calcular = true;
+
+                }
+                else if (opcion==2){
+                    calcular = false;
+                    opcion = 0;
+                
+                }
+                else{
+                    System.out.println("Opcion no valida");
+                    opcion = 2;
+                }
+            }
+        }
+    }
+}
