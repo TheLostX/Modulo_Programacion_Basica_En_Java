@@ -1,0 +1,281 @@
+
+package com.charles;
+
+import java.util.Random;
+import java.util.Scanner;
+
+
+public class Juego {
+    
+    public void jugar(){
+        
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+        int contador = 1;
+        
+        int numero = random.nextInt(29)+1;
+        
+        System.out.println("Ingresa un numero del 1 al 30 a ver si le aciertas");
+        int numeroUser = scanner.nextInt();
+        
+        while(numero!=numeroUser){
+            
+            if(numero> numeroUser){
+                System.out.println("Tu numero es menor");
+                contador++;
+            }
+            else if (numero< numeroUser){
+                System.out.println("Tu numero es mayor");
+                contador++;
+            }
+            
+            System.out.println("Ingresa otro :P");
+            numeroUser = scanner.nextInt();
+        }
+        
+        System.out.println("Has acertado, el numero era " + numero);
+        System.out.println("Necesitaste " + contador + " intentos ");
+        
+        
+    }
+    
+}
+
+--------------------------//-----------------------------------------------------
+
+package com.charles;
+
+
+public class Usuario {
+    
+    private String nombreUsuario;
+    private String contrasena;
+    
+    public Usuario(String nombreUsuario, String contrasena){
+        this.nombreUsuario = nombreUsuario;
+        this.contrasena = contrasena;
+        
+    }
+    
+    public void cambiarNombre(String nombreUsuario){
+        
+        this.nombreUsuario = nombreUsuario;
+        System.out.println("Has cambiado tu nombre correctamente a: " + nombreUsuario);
+    }
+    
+    public void cambiarContrasena(String contrasena){
+        
+        this.contrasena = contrasena;
+        System.out.println("Tu nueva contraseña es: " + contrasena);
+    }
+    
+    public String getUsuario(){
+        
+        return nombreUsuario;
+    }
+    
+    public String getContrasena(){
+        
+        return contrasena;
+    }
+    
+    public void mostrarUserYContrasena(){
+        
+        System.out.println("El usario " + nombreUsuario + " Tiene como contraseña: " + contrasena);
+    }
+    
+}
+
+------------------------------------------//-------------------------------------------------------------
+
+
+    public void elegirNumeros(){
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Favor ingresar los numeros a elegir, entre el 0 y el 32");
+        
+        int[] numeros = new int[6];
+        
+        for(int i = 0; i < numeros.length; i++){
+
+            numeros[i] = scanner.nextInt();
+
+            while (numeros[i]>32 || numeros[i]<0){
+                System.out.println("Numero invalido, elegir otro");
+                numeros[i] = scanner.nextInt();
+                
+                while(numerosElegidos.contains(numeros[i])){
+                    System.out.println("Ya ingreso ese numero, favor elegir otro");
+                    numeros[i] = scanner.nextInt();
+                }
+            }
+
+            while(numerosElegidos.contains(numeros[i])){
+                System.out.println("Ya ingreso ese numero, favor elegir otro");
+                numeros[i] = scanner.nextInt();
+                
+                while (numeros[i]>32 || numeros[i]<0){
+                    System.out.println("Numero invalido, elegir otro");
+                    numeros[i] = scanner.nextInt();
+                }
+            }
+ 
+            numerosElegidos.add(numeros[i]);
+            
+            if(i== numeros.length-1)
+                break;
+                        
+            System.out.println("Ingresar el siguiente numero");
+        }
+        
+    }
+
+    public void mostrarNumerosUsuario(){
+        
+        for(int i = 0; i < numerosElegidos.size(); i++){
+            
+            if (i == 0){
+                System.out.print("Tus numeros fueron los siguientes");
+            }
+            
+            System.out.print("-" + numerosElegidos.get(i));
+ 
+        }
+        System.out.println("");
+    }
+    
+    public void mostrarNumeros(){
+        
+        for(int i = 0; i < lista.size(); i++){
+            
+            if (i == 0){
+                System.out.print("Los numeros eran:");
+            }
+            
+            System.out.print("-" + lista.get(i));
+        }
+        System.out.println("");
+    }
+        
+    public void jugar(){
+        
+        int contador = 0;
+        
+        for(int i = 0; i < lista.size(); i++){
+            for(int j = 0; j < numerosElegidos.size(); j++){
+                
+                if(lista.get(i).equals(numerosElegidos.get(j))){
+                    
+                    System.out.println("Acertaste al numero: " + lista.get(i));
+                    contador++;
+                }
+            }
+        }
+        
+        if(contador == 0){
+            System.out.println("No acertaste a ningun numero D:");
+        }
+        
+        else if(contador==6){
+            System.out.println("Ganaste la loteria!!!! Que suerte!!!");
+        }
+        else{
+            System.out.println("No ganaste, solo acertaste: " + contador + " numeros");
+        }
+    }
+    
+    
+}
+
+---------------------------------//----------------------------------------------------------------------
+
+package com.charles;
+
+
+public class MainClass {
+    
+    public static void main(String[] args) {
+       
+        
+        Loteria lota = new Loteria();
+        lota.generarNumeros();
+        lota.elegirNumeros();
+        lota.mostrarNumerosUsuario();
+        lota.mostrarNumeros();
+        lota.jugar();
+ 
+    /*    
+        Juego juego = new Juego();
+        juego.jugar();
+     
+      
+        Usuario user1 = new Usuario("Charles", "123456");
+        Usuario user2 = new Usuario("Chuck", "654321");
+  
+        user1.mostrarUserYContrasena();
+        user2.mostrarUserYContrasena();
+        
+        
+        user1.cambiarNombre("Juan");
+        user1.cambiarContrasena("qwerty");
+        
+        user1.mostrarUserYContrasena();
+     */
+    
+    }
+}
+-------------------------------//-------------------------------------------
+
+
+
+package com.charles;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Arreglo {
+    
+    private ArrayList<Integer> lista;
+    private Scanner scanner;
+    private Random random;
+    private int [] arreglo;
+    
+    public Arreglo(int capacidad){
+
+        scanner = new Scanner(System.in);
+        random = new Random();
+        arreglo = new int[capacidad];
+        lista = new ArrayList<>();
+
+    }
+    
+    public void generarNumeros(){
+        
+        for(int i = 0; i < arreglo.length; i++){
+            
+            arreglo[i] = random.nextInt(100)+1;
+            System.out.println("Numero: " + arreglo[i]);
+        }
+    }
+    
+    public void ordenarArreglo(){
+
+        for(int i = 0; i < arreglo.length; i++){
+            
+            lista.add(arreglo[i]);
+            
+        }
+        System.out.println("____________________________");
+        
+        Collections.sort(lista);
+
+        for(Integer numero: lista){
+            System.out.println("Numero: " + numero);
+        }
+
+    }
+    
+}
