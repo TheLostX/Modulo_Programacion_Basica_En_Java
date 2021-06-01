@@ -1,0 +1,52 @@
+
+package com.charles;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+
+public class GeneradorContrasena {
+    
+    ArrayList<String> array;
+    private int capacidad;
+    
+    public GeneradorContrasena(int capacidad){
+        array = new ArrayList<>();
+        this.capacidad = capacidad;
+    }
+        
+    
+    private String[] caracteres = {"a", "b", "c", "d", "e", "f", "1", "2", "3", "4", "5"};
+    
+    public void generaContrasena(){
+        
+
+        for(int i = 0; i < caracteres.length; i++){
+            array.add(caracteres[i]);
+        }
+        
+        Collections.shuffle(array);
+        
+        String[] lista = new String[capacidad];
+        Random random = new Random();
+        
+        for(int i = 0; i < lista.length; i++){
+            
+            lista[i] = array.get(random.nextInt(caracteres.length-1));
+            
+        }
+  
+        
+        for(int i = 0; i < lista.length; i++){
+            
+            if (i == 0)
+                System.out.print("Tu Contraseña es: ");
+            
+            System.out.print(lista[i]);
+            
+        }
+        
+        System.out.println("");
+    }
+    
+}
