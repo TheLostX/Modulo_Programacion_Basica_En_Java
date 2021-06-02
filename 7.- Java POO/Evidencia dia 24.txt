@@ -1,0 +1,82 @@
+//Ejercicio Contador
+
+package com.charles;
+
+
+public class Contador {
+    
+    private int cont;
+    
+    public Contador(){
+        cont = 0;
+    }
+    
+    public Contador(int cont){
+        
+        if(cont<0){
+            this.cont = 0;
+        }
+        else{
+            this.cont = cont;
+        }
+        
+    }
+    
+    public void setCont(int cont){
+        
+        if(cont<0){
+            this.cont = 0;
+        }
+        else
+            this.cont = cont;
+    }
+    
+    public int getCont(){
+        return cont;
+    }
+    
+    public void incrementar(){
+        cont++;
+    }
+    
+    public void decrementar(){
+        if(cont<=0)
+            cont = 0;
+        else
+            cont--;
+    }
+    
+}
+
+--------------------------//------------------------------------
+
+
+
+package com.charles;
+
+public class MainClass {
+    
+    public static void main(String[] args) {
+        
+        Contador contador = new Contador(1);
+        
+        System.out.println("El contador esta en: "+ contador.getCont());
+        
+        contador.decrementar();
+        System.out.println("El contador esta en: "+ contador.getCont());
+        
+        contador.decrementar();
+        System.out.println("El contador esta en: "+ contador.getCont());
+        
+        contador.incrementar();
+        System.out.println("El contador esta en: "+ contador.getCont());
+        
+        contador.setCont(10);
+        System.out.println("El contador esta en: "+ contador.getCont());
+        
+        contador.setCont(20);
+        System.out.println("El contador esta en: "+ contador.getCont());
+    }
+
+    
+}
