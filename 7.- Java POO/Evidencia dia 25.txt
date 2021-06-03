@@ -1,0 +1,192 @@
+//Clase fecha
+
+
+package com.charles;
+
+import java.util.Scanner;
+
+
+public class Fecha {
+    
+    private int dia;
+    private int mes;
+    private int anno;
+    private Scanner scanner;
+    
+    public Fecha(){
+        dia = 0;
+        mes = 0;
+        anno = 0;
+        scanner = new Scanner(System.in);
+    }
+    
+    public Fecha(int dia, int mes, int anno){
+        scanner = new Scanner(System.in);
+        setDia(dia);
+    }
+    
+    public void setDia(int dia){
+        this.dia = dia;
+        
+        while(!fechaCorrecta()){
+            System.out.println("Favor ingresar un dia valido");
+            this.dia = scanner.nextInt();
+        }
+        
+    }
+    public void setMes(int mes){
+        this.mes = mes;
+        while(!fechaCorrecta()){
+            System.out.println("Favor ingresar un mes valido");
+            this.mes = scanner.nextInt();
+        }
+    }
+    public void setAnno(int anno){
+        this.anno = anno;
+        while(!fechaCorrecta()){
+            System.out.println("Favor ingresar un año valido");
+            this.anno = scanner.nextInt();
+        }
+    }
+    
+    public int getDia(){
+        return dia;
+    }
+    public int getMes(){
+        return mes;
+    }  
+    public int getAnno(){
+        
+        return anno;
+    }
+    
+    public boolean fechaCorrecta(){
+        
+        if(anno<1){
+            return false;
+        }
+        
+        if(dia<0 || dia>31 && (mes==1 || mes==3 || mes == 5 || mes==7 || mes==8 || mes == 10 || mes==12)){
+
+            if(dia<31 && dia>0){
+                return true;
+            }
+            return false;
+            
+        }
+        
+        if (dia< 0 || dia>30 && (mes==4 || mes== 6 || mes==9 || mes==11)){
+            return false;
+        }
+
+        if(dia>28 && mes==2){
+            return false;
+        }
+        
+        if(mes < 0 || mes>12){
+            
+            return dia>31;
+        }
+        
+        return true;
+    }
+    
+    public void diaSiguiente(){
+
+        if(mes==1 || mes==3 || mes == 5 || mes==7 || mes==8 || mes == 10){
+      
+            if(dia==31){
+                mes++;
+                dia = 1;
+            }
+            else{
+                dia++;
+            }
+            
+        }
+        
+        else if(mes==2){
+            
+            if (dia==28){
+                mes++;
+                dia = 1;
+            }
+            else{
+                dia++;
+            }
+
+        }
+        
+        else if(mes==12){
+            
+            if (dia==31){
+                       
+                anno++;
+                mes = 1;
+                dia = 1;
+            }
+            else{
+                dia++;
+            }
+        }
+        
+        else if (mes==4 || mes== 6 || mes==9 || mes==11){
+            
+            if(dia==30){
+                mes++;
+                dia = 1;
+            }
+            else{
+                dia++;
+            }
+        }
+        
+        System.out.println("estamos a :" + dia +"/" + mes +"/" + anno);
+    }
+    
+}
+
+//-------------------------------------//--------------------------------------------
+
+
+package com.charles;
+
+import java.util.Scanner;
+
+public class MainClass {
+    
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        Fecha fecha = new Fecha(-1, 12, 1990);
+        System.out.println("estamos a :" + fecha.getDia() +"/" + fecha.getMes() +"/" + fecha.getAnno());
+        
+        System.out.println("Ingrese dia");
+        int dia = scanner.nextInt();
+        fecha.setDia(dia);
+        
+        System.out.println("Ingrese mes");
+        int mes = scanner.nextInt();
+        fecha.setMes(mes);
+        
+        System.out.println("Ingrese año");
+        int anno = scanner.nextInt();
+        fecha.setAnno(anno);
+
+        System.out.println("estamos a :" + fecha.getDia() +"/" + fecha.getMes() +"/" + fecha.getAnno());
+        System.out.println(fecha.fechaCorrecta());
+        
+        System.out.println("Favor ingresa cuantos dias quieres adelantar");
+        
+        int dias = scanner.nextInt();
+        
+        for(int i = 0; i < dias; i++){
+            
+            fecha.diaSiguiente();
+        }
+
+   
+    }
+ 
+}
