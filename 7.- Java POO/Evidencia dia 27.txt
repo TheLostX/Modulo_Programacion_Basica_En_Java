@@ -1,0 +1,182 @@
+//----Clase Libro--------------------------------------
+
+
+package com.charles;
+
+
+public class Libro {
+    
+    private String tituloLibro;
+    private String autor;
+    private int numeroEjemplares;
+    private int prestamos;
+    
+    private int maxEjemplares;
+
+    public Libro(String tituloLibro, String autor, int numeroEjemplares, int prestamos) {
+        this.tituloLibro = tituloLibro;
+        this.autor = autor;
+        this.numeroEjemplares = numeroEjemplares;
+        this.prestamos = prestamos;
+        this.maxEjemplares = numeroEjemplares;
+    }
+    
+    public Libro(){
+        tituloLibro = "Vacio";
+        autor = "Vacio";
+        numeroEjemplares = 0;
+        prestamos = 0;
+    }
+
+    public String getTituloLibro() {
+        return tituloLibro;
+    }
+
+    public void setTituloLibro(String tituloLibro) {
+        this.tituloLibro = tituloLibro;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public int getNumeroEjemplares() {
+        return numeroEjemplares;
+    }
+
+    public void setNumeroEjemplares(int numeroEjemplares) {
+        this.numeroEjemplares = numeroEjemplares;
+    }
+
+    public int getPrestamos() {
+        return prestamos;
+    }
+
+    public void setPrestamos(int prestamos) {
+        this.prestamos = prestamos;
+    }
+    
+    public boolean prestamo(int prestamos){
+        
+        if(numeroEjemplares>0 && prestamos <= numeroEjemplares){
+            this.prestamos+=prestamos;
+            this.numeroEjemplares-=prestamos;
+            System.out.println("Han quedado " + numeroEjemplares + " Libros disponibles");
+            System.out.println("Se han prestado : " + this.prestamos + " libros en total");
+            return true;
+        }
+        else{
+            System.out.println("Excede la cantidad de ejemplares, solo quedan " + numeroEjemplares + " libros");
+            return false;
+        }
+  
+    }
+    
+    public boolean devolucion(int devolucion){
+        
+        if(numeroEjemplares==maxEjemplares){
+            System.out.println("No hay prestamos realizados");
+            return false;
+        }
+        else if(devolucion>maxEjemplares){
+            System.out.println("No se han prestado tantos libros");
+            return false;
+        }
+        else if((devolucion+numeroEjemplares) > maxEjemplares){
+            
+            System.out.println("Excede la devolucion");
+            return false;
+        }
+  
+        else{
+            prestamos-=devolucion;
+            numeroEjemplares+=devolucion;
+            System.out.println("Han quedado " + numeroEjemplares + " Libros disponibles");
+            
+            return true;
+        }
+    }
+    
+    @Override
+    public String toString(){
+        return "Titulo: " + tituloLibro + "/ Autor: " + autor + "/ Disponibles: " + numeroEjemplares;
+    }
+    
+    
+    
+}
+
+
+------------------------//-------------------------------------------------------------------------------------
+
+
+package com.charles;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class MainClass {
+    
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Libro> lista = new ArrayList<>();
+        
+        Libro libro1 = new Libro("Las aventuras de chuck norris", "Chuck norris", 5, 0);
+        Libro libro2 = new Libro("las aventuras de charles", "Charles X", 10, 0);
+        Libro libro3 = new Libro("En una piña debajo del mar", "Bob", 7, 0);
+        Libro libro4 = new Libro("Hola tortuga Hola oruga", "Chuck Billy", 9, 0);
+        
+        
+        lista.add(libro1);
+        lista.add(libro2);
+        lista.add(libro3);
+        lista.add(libro4);
+        
+        int opcionFinal = 0;
+        
+        while(opcionFinal!=2){
+            
+            System.out.println("Bienvenido a la biblioteca, elija una opcion");
+            System.out.println("1.- Pedir Libro \n2.- devolver Libro");
+        
+            int opcion = scanner.nextInt();
+        
+            System.out.println("Este es el listado de libros, escoja uno");
+        
+            for(int i = 0; i < lista.size(); i++){
+                System.out.println(i+1 +".- "+ lista.get(i).toString());
+            }
+        
+            int opcLibro = scanner.nextInt();
+        
+            Libro libroElejido = lista.get(opcLibro-1);
+            System.out.println("Ha elejido: " + libroElejido.toString());
+        
+            switch(opcion){
+            
+                case 1:
+                    System.out.println("Cuantos libros desea pedir");
+                    int pedida = scanner.nextInt();
+                    libroElejido.prestamo(pedida);
+                    break;
+                
+                case 2:
+                    System.out.println("Cuantos libros desea devolver");
+                    int devuelta = scanner.nextInt();
+                    libroElejido.devolucion(devuelta);
+                    break;
+            }
+        
+            System.out.println("Desea continuar? (1)Si (2)No");
+            opcionFinal = scanner.nextInt();
+        }
+    }
+    
+}
+
