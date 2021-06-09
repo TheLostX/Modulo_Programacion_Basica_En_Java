@@ -1,0 +1,276 @@
+//Clase electrodomestico 07-06-2021
+
+
+package com.charles;
+
+public abstract class Electrodomestico {
+    
+    private String nombre;
+    private String marca;
+    private float precio;
+
+    public Electrodomestico(String nombre, String marca, float precio) {
+        this.nombre = nombre;
+        this.marca = marca;
+        this.precio = precio;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public float getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(float precio) {
+        this.precio = precio;
+    }
+
+    public abstract String mostrarDatos();
+
+}
+--------------------------//---------------------------------------------
+
+
+package com.charles;
+
+
+public class Televisor extends Electrodomestico {
+    
+    private float pulgadas;
+    private String tipo;
+    
+    public Televisor(String nombre, String marca, float precio, float pulgadas, String tipo) {
+        super(nombre, marca, precio);
+        this.pulgadas = pulgadas;
+        this.tipo = tipo;
+    }
+
+    public float getPulgadas() {
+        return pulgadas;
+    }
+
+    public void setPulgadas(float pulgadas) {
+        this.pulgadas = pulgadas;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+    
+    @Override
+    public String mostrarDatos(){
+        
+        return "El electrodomestico es un/a: " + getNombre()
+                +"\nSu marca es: " + getMarca()
+                + "\nSu precio es: " + getPrecio()
+                + "\nSus pulgadas son: " + pulgadas
+                + "\nSu tipo es: " + tipo;
+    }
+    
+}
+
+--------------------------------------//-------------------------------------------
+
+
+package com.charles;
+
+
+public class Lavadora extends Electrodomestico{
+    
+    private float capacidadCarga;
+    private String materialTambor;
+    private int numeroProgramas;
+    
+    public Lavadora(String nombre, String marca, float precio, float capacidadCarga, String tipoTambor, int numeroProgramas) {
+        super(nombre, marca, precio);
+        this.capacidadCarga = capacidadCarga;
+        this.materialTambor = tipoTambor;
+        this.numeroProgramas = numeroProgramas;
+    }
+
+    public int getNumeroProgramas() {
+        return numeroProgramas;
+    }
+
+    public void setNumeroProgramas(int numeroProgramas) {
+        this.numeroProgramas = numeroProgramas;
+    }
+
+    public float getCapacidadCarga() {
+        return capacidadCarga;
+    }
+
+    public void setCapacidadCarga(float capacidadCarga) {
+        this.capacidadCarga = capacidadCarga;
+    }
+
+    public String getMaterialTambor() {
+        return materialTambor;
+    }
+
+    public void setMaterialTambor(String materialTambor) {
+        this.materialTambor = materialTambor;
+    }
+    
+    @Override
+    public String mostrarDatos(){
+        
+        return "El electrodomestico es un/a: " + getNombre()
+                +"\nSu marca es: " + getMarca()
+                + "\nSu precio es: " + getPrecio()
+                + "\nSu capacidad de carga es: " + capacidadCarga
+                + "\nEl material del tambor es: " + materialTambor
+                + "\nLa cantidad de programas es: " + numeroProgramas;
+    }
+    
+    
+    
+}
+
+----------------------------------//--------------------------------------------------------
+
+
+package com.charles;
+
+public class Cafetera extends Electrodomestico{
+    
+    private String tipoCafe;
+    private float capacidad;
+    private String apagadoAutomatico;
+    
+    public Cafetera(String nombre, String marca, float precio, String tipoCafe, float capacidad, String apagadoAutomatico) {
+        super(nombre, marca, precio);
+        this.tipoCafe = tipoCafe;
+        this.capacidad = capacidad;
+        this.apagadoAutomatico = apagadoAutomatico;
+    }
+
+    public String getTipoCafe() {
+        return tipoCafe;
+    }
+
+    public void setTipoCafe(String tipoCafe) {
+        this.tipoCafe = tipoCafe;
+    }
+
+    public float getCapacidad() {
+        return capacidad;
+    }
+
+    public void setCapacidad(float capacidad) {
+        this.capacidad = capacidad;
+    }
+    
+    public String getApagadoAutomatico(){
+        return apagadoAutomatico;
+    }
+
+    public void setApagadoAutomatico(String apagadoAutomatico) {
+        this.apagadoAutomatico = apagadoAutomatico;
+    }
+    
+    @Override
+    public String mostrarDatos(){
+                
+        return "El electrodomestico es un/a: " + getNombre()
+                +"\nSu marca es: " + getMarca()
+                + "\nSu precio es: " + getPrecio()
+                + "\nEl tipo de cafe es: " + tipoCafe
+                + "\nSu capacidad es: " + capacidad + " Lts"
+                + "\nPosee apagado automatico: " + apagadoAutomatico;
+    }
+    
+}
+
+-----------------------------------------//-----------------------------------------
+
+
+package com.charles;
+
+import java.util.Scanner;
+
+
+public class MainClass {
+    
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        
+        Televisor tv = new Televisor("Televisor", "Samsung", 180000, 32, "Led");
+        System.out.println(tv.mostrarDatos());
+        
+        System.out.println("---------------------------------------------------");
+        
+        Lavadora lavadora = new Lavadora("Lavadora", "Mademsa", 130000, 8, "acero", 8);
+        System.out.println(lavadora.mostrarDatos());
+        
+        System.out.println("---------------------------------------------------");
+        
+        Cafetera cafetera = new Cafetera("Cafetera", "Krups", 20000, "grano", 1.8f, "si");
+        System.out.println(cafetera.mostrarDatos());
+        
+        System.out.println("---------------------------------------------------");
+        
+        System.out.println("Ingrese el producto a comprar");
+        System.out.println("1.- " + cafetera.getNombre());
+        System.out.println("2.- " + tv.getNombre());
+        System.out.println("3.- " + lavadora.getNombre());
+        
+        int opcion = scanner.nextInt();
+        
+        switch(opcion){
+            
+            case 1:
+                System.out.println("Cuantos desea comprar? - Valor por unidad: " + cafetera.getPrecio());
+                int opcion2 = scanner.nextInt();
+                
+                float nuevoPrecio = cafetera.getPrecio() * opcion2;
+                System.out.println("El total es: " + nuevoPrecio);
+                break;
+                
+            case 2:
+                System.out.println("Cuantos desea comprar? - Valor por unidad: " + tv.getPrecio());
+                opcion2 = scanner.nextInt();
+                
+                nuevoPrecio = tv.getPrecio() * opcion2;
+                System.out.println("El total es: " + nuevoPrecio);
+                break;
+                
+            case 3:
+                
+                System.out.println("Cuantos desea comprar? - Valor por unidad: " + lavadora.getPrecio());
+                opcion2 = scanner.nextInt();
+                
+                nuevoPrecio = lavadora.getPrecio() * opcion2;
+                System.out.println("El total es: " + nuevoPrecio);
+                break;
+                
+            default:
+                System.out.println("Opcion invalida");
+                break;
+        }
+        
+        
+        
+    }
+    
+}
