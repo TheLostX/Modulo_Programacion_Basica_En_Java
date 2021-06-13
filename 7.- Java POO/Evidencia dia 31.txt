@@ -1,0 +1,214 @@
+//Clase 09-06-2021
+
+
+package com.charles;
+
+
+public abstract class Persona {
+    
+    private String nombre;
+    private String apellido;
+    private int edad;
+    private String rut;
+
+    public Persona(String nombre, String apellido, int edad, String rut) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.rut = rut;
+    }
+    
+    public Persona(){
+        nombre = "Empty";
+        apellido = "Empty";
+        edad = 0;
+        rut = "12345678-0";
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getRut() {
+        return rut;
+    }
+
+    public void setRut(String rut) {
+        this.rut = rut;
+    }
+    
+    
+    public abstract String mostrarDatos();
+    
+    public abstract void saludar();
+    
+}
+
+--------------------------------//------------------------------------
+
+
+package com.charles;
+
+
+public class Alumno extends Persona {
+    
+    private String carrera;
+
+    public Alumno(String nombre, String apellido, int edad, String rut, String carrera) {
+        super(nombre, apellido, edad, rut);
+        this.carrera = carrera;
+    }
+    
+    public void setCarrera(String carrera){
+        this.carrera = carrera;
+    }
+    
+    public String getCarrera(){
+        return carrera;
+    }
+    
+    
+
+    @Override
+    public String mostrarDatos() {
+        return "Nombre: "+ getNombre()
+                +"\nApellido: " + getApellido()
+                +"\nEdad: " + getEdad()
+                +"\nRut: " + getRut()
+                +"\nCarrera: "+ carrera;
+    }
+
+    @Override
+    public void saludar() {
+        System.out.println("Hola mi nombre es " + getNombre() + " y soy un estudiante");
+    }
+    
+}
+
+-------------------------------------//--------------------------------------------------------------
+
+
+package com.charles;
+
+
+public class Profesor extends Persona {
+    
+    private String tipo;
+
+    public Profesor(String nombre, String apellido, int edad, String rut, String tipo) {
+        super(nombre, apellido, edad, rut);
+        this.tipo = tipo;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+    
+
+    @Override
+    public String mostrarDatos(){
+        return "Nombre: "+ getNombre()
+                +"\nApellido: " + getApellido()
+                +"\nEdad: " + getEdad()
+                +"\nRut: " + getRut()
+                +"\nTipo: " + tipo;
+    }
+
+    @Override
+    public void saludar() {
+        System.out.println("Hola mi nombre es " + getNombre() + " y soy un profesor");
+        
+    }
+    
+}
+-----------------------------------//-------------------------------------------------------------
+
+
+package com.charles;
+
+
+public class Empleado extends Persona{
+    
+    private String cargo;
+
+    public Empleado(String nombre, String apellido, int edad, String rut, String cargo) {
+        super(nombre, apellido, edad, rut);
+        this.cargo = cargo;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+    
+
+    @Override
+    public void saludar(){
+        System.out.println("Hola soy " + getNombre() +" y soy un empleado");
+    }
+    
+    @Override
+    public String mostrarDatos(){
+        return "Nombre: "+ getNombre()
+            +"\nApellido: " + getApellido()
+            +"\nEdad: " + getEdad()
+            +"\nRut: " + getRut()
+            +"\nCargo: " + cargo;
+    }
+    
+}
+---------------------------------------//--------------------------------------------------
+
+
+package com.charles;
+
+public class MainClass {
+    
+    public static void main(String[] args) {
+        
+        Alumno alumno1 = new Alumno("Charles", "Barkley", 28, "18345438-K", "Pedagogia en ingles");
+        alumno1.saludar();
+        System.out.println(alumno1.mostrarDatos());
+        
+        System.out.println("------------------------------------------------------------");
+        
+        Profesor profesor1 = new Profesor("Bob", "Richards", 53, "9243596-0", "Matematicas");
+        profesor1.saludar();
+        System.out.println(profesor1.mostrarDatos());
+        
+        System.out.println("------------------------------------------------------------");
+        
+        Empleado empleado1 = new Empleado("Patricio", "Estrella", 36, "16331647-1", "Secretario");
+        empleado1.saludar();
+        System.out.println(empleado1.mostrarDatos());
+    }
+    
+}
+---------------------------------------------//-----------------------------------------------------------------------
